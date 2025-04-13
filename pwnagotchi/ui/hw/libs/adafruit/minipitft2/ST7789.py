@@ -18,6 +18,10 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
+
+# 04/13/2025 - Kelmian
+# Off set cords were updated to center the UI better
+# Adafruit miniPiTFT 1.14" 240x135 w/ GPIO buttons
 import numbers
 import time
 import numpy as np
@@ -26,7 +30,7 @@ import spidev
 import RPi.GPIO as GPIO
 
 
-__version__ = '0.0.4'
+__version__ = '0.0.5'
 
 BG_SPI_CS_BACK = 0
 BG_SPI_CS_FRONT = 1
@@ -92,8 +96,8 @@ class ST7789(object):
 
     def __init__(self, port, cs, dc, backlight, rst=None, width=240,
                  height=135, rotation=0, invert=True, spi_speed_hz=60 * 1000 * 1000,
-                 offset_left=0,
-                 offset_top=0):
+                 offset_left=40,
+                 offset_top=53):
         """Create an instance of the display using SPI communication.
 
         Must provide the GPIO pin number for the D/C pin and the SPI driver.
